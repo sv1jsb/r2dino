@@ -33,7 +33,7 @@ The LCD has a backlight input. I control this input with the help of a PNP trans
 #### Extra hardware used
 The following hardware is not essential to the project but I decided to use them when I was looking for an autonomous result with its own enclosure.
 
-The project is powered by a Li-Ion 3.7v battery. The battery is connected to power boost board giving the desired 5V output. This specific power boost board has also a charger which is used to charge the battery when it's connected to a usb.
+The project is powered by a Li-Ion 3.7v battery. The battery is connected to power boost board giving the desired 5V output. This specific power boost board has also a charger which is used to charge the battery when it's connected to a pc.
 
 A USB-C breakout board is used for input of power and communicating with the ps. I connected the data lines of the USB-C to a male USB Type B plug. The input power is connected to the charger and the boost's output is connected to the USB Type B. This gives the advantage of charging the battery while the project is connected to the pc for programming and testing.
 
