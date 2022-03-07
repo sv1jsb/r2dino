@@ -17,7 +17,7 @@ Joystick's X-axis output is connected to A0 and Y-axis to A1. Both lines have a 
 LM35's output is connected to A2. I've also set the analog reference to internal. This will provide better temperature resolution.
 
 #### DS1307
-This RTC module is communicating via an I2C connection with Arduino. The default I2C implementation uses A4 for SDA and A4 for SCL.
+This RTC module is communicating via an I2C connection with Arduino. The default I2C implementation uses A4 for SDA and A5 for SCL.
 
 #### Buzzer
 Buzzer is connected directly to D10 and uses its PWM output capabilities.
