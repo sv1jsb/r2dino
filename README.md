@@ -33,15 +33,35 @@ The LCD has a backlight input. I control this input with the help of a PNP trans
 #### Extra hardware used
 The following hardware is not essential to the project but I decided to use them when I was looking for an autonomous result with its own enclosure.
 
-The project is powered by a Li-Ion 3.7v battery. The battery is connected to power boost board giving the desired 5V output. This specific power boost board has also a charger which is used to charge the battery when it's connected to a pc.
+The project is powered by a Li-Ion 3.7v battery. The battery is connected to a power boost board giving the desired 5V output. This specific power boost board has also a charger which is used to charge the battery when it's connected to a pc.
 
-A USB-C breakout board is used for input of power and communicating with the ps. I connected the data lines of the USB-C to a male USB Type B plug. The input power is connected to the charger and the boost's output is connected to the USB Type B. This gives the advantage of charging the battery while the project is connected to the pc for programming and testing.
+A USB-C breakout board is used for input of power and communicating with the pc. I connected the data lines of the USB-C to a male USB Type B plug. The input power is connected to the charger and the boost's output is connected to the USB Type B. This gives the advantage of charging the battery while the project is connected to the pc for programming and testing.
 
 The power boost board has an _Enable_ pin which when pulled to ground it's output is turned off. I connected a rocker switch to this _Enable_ pin serving as a on/off.
 
 Arduino's _Reset_ pin is connected to an illuminated push button which also serves as a power-on indicator. I believe _Reset_ is useful to be accessible when your project is in enclosure, especially when you are testing and programming
 
 The battery charger has three on-board leds which indicate battery-low, charging, and charged states. In their place I connected a "traffic light" led component. This has a green, a yellow and a red led nicely packed together and are visible at the front of the enclosure.
+
+
+### Software description
+#### Requirements
+The following libraries are needed:
+* Wire
+* RTC
+* AT24Cxx
+* LowPower
+* SoftwareSerial
+
+All are available through Arduno's Library Manager.
+
+Since this was my first C++ project I wanted to experiment with what I could do with the program structure and arranged it accordingly.
+
+* r2dino.ino - Main project's program
+* r2dino.h - All defines and library inludes are here as long as utility functions used through out the main program
+* MyAT24Cxx - I subclassed the AT24Cxx library adding the capability to read and write unsigned long values to eeprom
+* Game objects - Each game object has its own .cpp and .h file
+
 
 
 
